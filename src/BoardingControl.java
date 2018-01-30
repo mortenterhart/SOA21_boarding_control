@@ -6,14 +6,15 @@ public class BoardingControl {
     private PassengerList boardedPassengerList;
 
     private BoardingControl() {
-        port = new Port();
+        PortFactory factory = new PortFactory();
+        port = factory.produceInstance();
     }
 
     public static BoardingControl getInstance() {
         return instance;
     }
 
-    public int call(PassengerList passengerList) {
+    public int callPassengers(PassengerList passengerList) {
         return 0;
     }
 
@@ -25,7 +26,7 @@ public class BoardingControl {
         return false;
     }
 
-    public void printPassengerList(PassengerList passengerList) {
+    public void innerPrintPassengerList(PassengerList passengerList) {
 
     }
 
@@ -36,15 +37,15 @@ public class BoardingControl {
     public class Port implements IBoardingControl {
 
         public int call(PassengerList passengerList) {
-            return call(passengerList);
+            return callPassengers(passengerList);
         }
 
         public boolean inspect(Passport passport) {
-            return false;
+            return inspectPassport(passport);
         }
 
         public boolean scan(BoardingPass boardingPass) {
-            return false;
+            return scanBoardingPass(boardingPass);
         }
 
         public void printPassengerList(PassengerList passengerList) {
@@ -53,6 +54,13 @@ public class BoardingControl {
 
         public void notifyGroundOperations(BoardingControlReceipt boardingControlReceipt) {
 
+        }
+    }
+
+    private class PortFactory implements IFactory {
+
+        public Port produceInstance() {
+            return new Port();
         }
     }
 }
