@@ -34,7 +34,7 @@ public class BoardingControl {
     }
 
     public void notifyGroundOperations(BoardingControlReceipt boardingControlReceipt) {
-        System.out.println("Hallo wir arbeiten am Problem, macht ma hin!");
+        System.out.println("GroundOperations! There is something");
     }
 
     public class Port implements IBoardingControl {
