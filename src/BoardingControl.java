@@ -2,6 +2,7 @@ public class BoardingControl {
     private static BoardingControl instance = new BoardingControl();
     public Port port;
 
+
     private CheckInDesk checkInDesk;
     private PassengerList boardedPassengerList;
 
@@ -19,19 +20,22 @@ public class BoardingControl {
     }
 
     public boolean inspectPassport(Passport passport) {
-        return false;
+        return true;
+
     }
 
     public boolean scanBoardingPass(BoardingPass boardingPass) {
-        return false;
+        return true;
     }
 
-    public void innerPrintPassengerList(PassengerList passengerList) {
-
+    public void printPassengerList(PassengerList passengerList) {
+        for(int index = 0; index <= passengerList.size(); index++){
+            System.out.println(passengerList.get(index));
+        }
     }
 
     public void notifyGroundOperations(BoardingControlReceipt boardingControlReceipt) {
-
+        System.out.println("GroundOperations! There is something");
     }
 
     public class Port implements IBoardingControl {
