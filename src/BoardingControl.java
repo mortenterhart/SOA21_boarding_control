@@ -28,11 +28,13 @@ public class BoardingControl {
     }
 
     public void printPassengerList(PassengerList passengerList) {
-
+        for(int index = 0; index <= passengerList.size(); index++){
+            System.out.println(passengerList.get(index));
+        }
     }
 
     public void notifyGroundOperations(BoardingControlReceipt boardingControlReceipt) {
-
+        System.out.println("Hallo wir arbeiten am Problem, macht ma hin!");
     }
 
     public class Port implements IBoardingControl {
