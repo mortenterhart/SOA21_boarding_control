@@ -1,6 +1,6 @@
 public interface IBoardingControl {
 
-    public int call(PassengerList passengerList);
+    public void call(PassengerList passengerList);
 
     public boolean inspect(Passport passport);
 
@@ -9,5 +9,5 @@ public interface IBoardingControl {
     public void printPassengerList(PassengerList passengerList);
 
     public void notifyGroundOperations(BoardingControlReceipt boardingControlReceipt);
-    
+
 }
