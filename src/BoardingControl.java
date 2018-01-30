@@ -2,6 +2,7 @@ public class BoardingControl {
     private static BoardingControl instance = new BoardingControl();
     public Port port;
 
+
     private CheckInDesk checkInDesk;
     private PassengerList boardedPassengerList;
 
@@ -18,11 +19,12 @@ public class BoardingControl {
     }
 
     public boolean inspectPassport(Passport passport) {
-        return false;
+        return true;
+
     }
 
     public boolean scanBoardingPass(BoardingPass boardingPass) {
-        return false;
+        return true;
     }
 
     public void printPassengerList(PassengerList passengerList) {
