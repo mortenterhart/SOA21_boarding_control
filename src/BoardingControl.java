@@ -1,4 +1,4 @@
-public class BoardingControl implements IBoardingControl {
+public class BoardingControl {
     private static BoardingControl instance = new BoardingControl();
     public Port port;
 
@@ -17,11 +17,11 @@ public class BoardingControl implements IBoardingControl {
         return 0;
     }
 
-    public boolean inspect(Passport passport) {
+    public boolean inspectPassport(Passport passport) {
         return false;
     }
 
-    public boolean scan(BoardingPass boardingPass) {
+    public boolean scanBoardingPass(BoardingPass boardingPass) {
         return false;
     }
 
@@ -33,7 +33,26 @@ public class BoardingControl implements IBoardingControl {
 
     }
 
-    public class Port {
+    public class Port implements IBoardingControl {
 
+        public int call(PassengerList passengerList) {
+            return call(passengerList);
+        }
+
+        public boolean inspect(Passport passport) {
+            return false;
+        }
+
+        public boolean scan(BoardingPass boardingPass) {
+            return false;
+        }
+
+        public void printPassengerList(PassengerList passengerList) {
+
+        }
+
+        public void notifyGroundOperations(BoardingControlReceipt boardingControlReceipt) {
+
+        }
     }
 }
